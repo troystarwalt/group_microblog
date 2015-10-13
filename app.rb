@@ -12,7 +12,7 @@ enable :sessions
 set :bind, "0.0.0.0"
 set :sessions, true
 
-get '/' do 
+get '/index' do 
 	@user = User.all
     erb :index
 end
@@ -29,7 +29,7 @@ end
 get '/logout' do
 	flash[:notice] = "You'll Be Back."
 	session.clear
-	redirect to("index")
+	redirect to("/index")
 end
 
 post "/user_create" do
