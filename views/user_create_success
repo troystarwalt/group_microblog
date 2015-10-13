@@ -1,0 +1,2 @@
+<p>Thanks for creating your account #params{:username}!</p>
+<p>There are now this many users: <%= @users.count %></p>
