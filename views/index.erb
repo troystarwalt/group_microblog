@@ -1,12 +1,9 @@
 
 
-<nav>
-<li><a href="signup">Sign Up</a></li>
-<li><a href="index">Home</a></li>
-</nav>
+
 <div>
 <h1>List of Users</h1>
-<% @users.each do |u| %>
+<% @user.each do |u| %>
 <p><%= u.username %>, <%= u.id%></p>
 <% end %>
 </div>

@@ -7,7 +7,21 @@
 	<body>
 		<div id="wrapper">
 			<h1>This is a header</h1>
+			<nav>
+				<ul>
+					<li><a href="signup">Sign Up</a></li>
+					<li><a href="/">Home</a></li>
+					<li><a href="login">Login</a></li>
+					<li><a href="ourtweet">Throw Something</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
 			<hr>
+			<p style="color:black">
+				<% if flash[:notice] %>
+                <%= flash[:notice] %>
+                <% end %>
+			</p>
 		<%= yield %>
 		<div>
 	</body>
