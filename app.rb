@@ -10,3 +10,7 @@ enable :sessions
 use Rack::Flash, :sweep => true
 set :bind, "0.0.0.0"
 set :sessions, true
+
+get '/' do 
+	erb :index	
+end
