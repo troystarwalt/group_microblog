@@ -7,4 +7,4 @@ gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'rake'
 gem 'pry'
-
+gem 'rerun'
