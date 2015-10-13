@@ -68,9 +68,28 @@ post "/user_login_attempt" do
 	end
 end
 
-get "/ourtweet" do
+get "/ourthrow" do
 	@user = User.all
-	erb :ourtweet
+	erb :ourthrow
+end
+
+post "/submit_throw" do
+	if params[:user_throw].empty?
+		redirect to("/user_throw_error")
+	else
+		Throw.create({
+			:throwpost => params[:user_throw],
+		})
+		redirect to("/user_throw_success")
+	end
+end
+
+get "/user_throw_error" do
+	"Sorry try again."
+end
+
+get "/user_throw_success" do
+	"Woo!"
 end
 
 get "/user_create_error" do
