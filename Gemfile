@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rack-flash3'
+gem 'sinatra-flash'
 gem 'sqlite3'
 gem 'activerecord'
 gem 'sinatra'
