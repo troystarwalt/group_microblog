@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013161831) do
+ActiveRecord::Schema.define(version: 20151013215658) do
+
+  create_table "throws", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "throwpost"
+    t.datetime "create_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
