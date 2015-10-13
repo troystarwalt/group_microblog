@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'rack-flash'
+require 'sinatra/flash'
 require 'active_record'
 require 'sinatra'
 require 'sinatra/activerecord'
