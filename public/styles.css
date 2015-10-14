@@ -1,0 +1,12 @@
+html, body {
+	margin:; 0;
+	height: 100%;
+
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 1080px;
+	border: 2px solid black;
+}
+

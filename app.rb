@@ -22,7 +22,6 @@ get '/signup' do
 end
 
 get '/login' do
-	flash[:notice] = "Welcome!"
 	erb :login
 end
 
@@ -98,6 +97,7 @@ get "/user_create_error" do
 end
 
 get "/user_create_success" do
+	flash[:notice] = "Welcome!"
 	@user_current = User.last
 	@users = User.all
 	erb :user_create_success	
