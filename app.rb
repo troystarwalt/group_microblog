@@ -111,3 +111,9 @@ end
 get "/login_error" do
 	"Sorry Your username or password was not correct."
 end
+
+
+get "/seeusers" do
+	@user = User.all
+	erb :seeusers
+end

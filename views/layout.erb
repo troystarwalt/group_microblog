@@ -13,20 +13,25 @@
 					<li><a href="/">Home</a></li>
 					<li><a href="login">Login</a></li>
 					<li><a href="ourthrow">Throw Something</a></li>
+					<li><a href="seeusers">See Other Users</a></li>
 					<li><a href="/logout">Logout</a></li>
 				</ul>
 			</nav>
 			<hr>
-			<p style="color:black">
+			<p class="flash_notice">
 				<% if flash[:notice] %>
                 <%= flash[:notice] %>
                 <% end %>
 			</p>
-		<%= yield %>
-		<footer>
-			<hr>
-			<p>This is protected.</p>
-		</footer>
-		</div>		
+			<%= yield %>
+			<footer>
+				<hr>
+				<div id="copyright">
+					<span>&copy; ANT</span>
+					<span>All Rights Reserved</span>
+				</div>	
+			</footer>
+		</div>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	
 	</body>
 </html>
