@@ -125,7 +125,11 @@ get "/seeusers" do
 end
 
 
-
+delete '/users/:id' do
+        session.clear
+        current_user.delete
+       erb :edit_profile
+end
 
 
 

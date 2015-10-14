@@ -6,3 +6,43 @@
 <p>Password: <%= @user.password %></p>
 <a href="#">Change Password</a>
 <a href="#">Change Email</a>
+
+<button id="editAccount">Edit Account</button>
+<!-- edit the username, names, email, and password. -->
+<div id="editInfo">
+	  <form method="POST" action="/profile">
+	 <label for="usernameRadio">Edit your Username?</label>
+	 <input type="radio" name "usernameRadio" value="yes">Yes
+	 <input type="radio" name "usernameRadio" value="no" checked/>No
+	</form>
+	<form method="POST" action="/profile">
+	 <label for="fnameRadio">Edit your Firstname?</label>
+	 <input type="radio" name "fnameRadio" value="yes">Yes
+	 <input type="radio" name "fnameRadio" value="no" checked/>No
+	</form>
+	<form method="POST" action="/profile">
+	 <label for="lnameRadio">Edit your Lastname?</label>
+	 <input type="radio" name "lname" value="yes">Yes
+	 <input type="radio" name "lname" value="no" checked/>No
+	</form>
+	<form method="POST" action="/profile">
+	 <label for="emailRadio">Edit your Profile?</label>
+	 <input type="radio" name "emailRadio" value="yes">Yes
+	 <input type="radio" name "emailRadio" value="no" checked/>No
+	</form>
+	<form method="POST" action="/profile">
+	 <label for="passRadio">Edit your Password?</label>
+	 <input type="radio" name "passRadio" value="yes">Yes
+	 <input type="radio" name "passRadio" value="no" checked/>No	</form>
+</div>
+<button id="deleteAccount">Delete Account</button>
+<!-- delete the account from table User and maybe remove posts-->
+<script type="text/javascript">
+$("#editAccount").click(function(){
+	$("#editInfo").slideToggle('slow');
+});
+
+var yesradios = $("input[type="radio"]");
+</script>
+
+
