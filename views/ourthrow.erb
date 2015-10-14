@@ -1,13 +1,20 @@
 <!-- This page "posts" or "throws" a users text submission. -->
-<form method="POST" action="/submit_throw">
-	<textarea type="text" name="user_throw"></textarea>
-	<br>
-	<input type="submit" value="Throw It"/>
-</form>
+<div id="throw_area">
+	<form method="POST" action="/submit_throw" id="throw_form">
+		<textarea autofocus type="text" name="user_throw" id="throw_box" maxlength="149"></textarea>
+		<br>
+		<input type="submit" value="Throw It" id="throw_it_button" />
+	</form>
 
-<div>
-	 	<% @throw.each do |th| %>
-        	<p><%= th.id %> said <%= th.throwpost %> on <%= th.created_at %></p>
-    	<% end %>
+	<div id="list_of_throws">
+		<% @throw.each do |th| %>
+	    <p>
+	    <%= th.id %> 
+	    said 
+	    <%= th.throwpost %> on 
+	    <%= th.created_at %>
+	    </p>
+	    <% end %>
+	</div>
 </div>
 
