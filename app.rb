@@ -70,6 +70,7 @@ end
 
 get "/ourthrow" do
 	@user = User.all
+	@throw = Throw.all
 	erb :ourthrow
 end
 

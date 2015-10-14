@@ -5,3 +5,9 @@
 	<input type="submit" value="Throw It"/>
 </form>
 
+<div>
+	 	<% @throw.each do |th| %>
+        	<p><%= th.id %> said <%= th.throwpost %> on <%= th.created_at %></p>
+    	<% end %>
+</div>
+
