@@ -75,12 +75,14 @@ end
 
 get "/ourthrow" do
 	@user = User.all
-	@throw = Throw.all
+	@throw = Throw.last(10)
+	@havename = Throw.joins(:user_id, :user_name)
 	erb :ourthrow
 end
 
 post "/submit_throw" do
-	if params[:user_throw].empty?
+	if params[:user_throw].empty? ||
+		params[:havename].nil?
 		redirect to("/user_throw_error")
 	else
 		Throw.create({
@@ -91,11 +93,12 @@ post "/submit_throw" do
 end
 
 get "/user_throw_error" do
-	"Sorry try again."
+	"You must enter something or have an account."
 end
 
 get "/user_throw_success" do
-	"Woo!"
+	flash[:notice] = "Nice Throw"
+	redirect to("/ourthrow")
 end
 
 get "/user_create_error" do
@@ -118,20 +121,14 @@ get "/login_error" do
 	"Sorry Your username or password was not correct."
 end
 
-
 get "/seeusers" do
+	@throw = Throw.all
 	@user = User.all
 	erb :seeusers
 end
-
 
 delete '/users/:id' do
         session.clear
         current_user.delete
        erb :edit_profile
 end
-
-
-
-
-
