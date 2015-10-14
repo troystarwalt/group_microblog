@@ -12,6 +12,12 @@ enable :sessions
 set :bind, "0.0.0.0"
 set :sessions, true
 
+# def current_user
+# 	if session[:user_id]
+#     User.find.session[:user_id]
+#    end
+# end
+
 get '/' do 
 	@user = User.all
     erb :index
@@ -78,7 +84,7 @@ post "/submit_throw" do
 		redirect to("/user_throw_error")
 	else
 		Throw.create({
-			:throwpost => params[:user_throw],
+			:throwpost => params[:user_throw], user_id: session[:user_id]
 		})
 		redirect to("/user_throw_success")
 	end
@@ -117,3 +123,11 @@ get "/seeusers" do
 	@user = User.all
 	erb :seeusers
 end
+
+
+
+
+
+
+
+
