@@ -2,6 +2,8 @@
 
 #2B2D42: textarea background;
 #EDF2F3: textrea text;
+#EF233C: bottom border of th;
+#8D99AE: bottom border of td;
 */
 
 
@@ -50,7 +52,30 @@ textarea{
 
 #list_of_throws {
 	width: 420px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
+
+.show_latest_throws {
+	border: 1px solid #EDF2F4;
+	background-color: #8D99AE;
+	color: #EDF2F3;
+	padding: 2px;
+}
+
+th {
+	border-bottom: 2px solid #EF233C;
+}
+
+th, td {
+	text-align: center;
+}
+
+td {
+	border-bottom: 1px solid #8D99AE;
+}
+
+/*footer stuff*/
 
 #content {
 	padding-bottom: 100px;
