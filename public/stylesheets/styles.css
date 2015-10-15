@@ -11,7 +11,7 @@
 html, body {
 	margin: 0px;
 	height: 100%;
-	font-family: Century-Gothic, sans-serif;
+	font-family: "fira-sans-2", Century-Gothic, sans-serif;
 }
 
 #top_bar {
@@ -26,8 +26,10 @@ html, body {
 
 #main_header {
 	text-align: right;
+	font-family: good-kitty, sans-serif;
+	font-size: 3em;
 	color: #EDF2F3;
-	padding-right: 10px;
+	margin-right: 33%;
 }
 
 #wrapper {
@@ -115,10 +117,8 @@ td {
 	border-bottom: 1px solid #8D99AE;
 }
 
-/*footer stuff*/
-
 #content {
-	padding-bottom: 100px;
+	padding-bottom: 150px;
 	font: 200 1em "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
 
@@ -126,10 +126,12 @@ td {
 	padding: 0 10px;
 }
 
+/*footer stuff*/
+
 footer {
 	background:#fff;
 	width:100%;
-	height:60px;
+	height:100px;
 	position:fixed;
 	bottom:0;
 	left: 0;
