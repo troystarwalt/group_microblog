@@ -28,6 +28,7 @@ get '/signup' do
 end
 
 get '/login' do
+	flash[:notice] = "Try again."
 	erb :login
 end
 
@@ -81,8 +82,7 @@ get "/ourthrow" do
 end
 
 post "/submit_throw" do
-	if params[:user_throw].empty? ||
-		params[:havename].nil?
+	if params[:user_throw].empty?
 		redirect to("/user_throw_error")
 	else
 		Throw.create({
@@ -119,6 +119,7 @@ end
 
 get "/login_error" do
 	"Sorry Your username or password was not correct."
+	redirect to("/login")
 end
 
 get "/seeusers" do
