@@ -12,15 +12,15 @@ enable :sessions
 set :bind, "0.0.0.0"
 set :sessions, true
 
-# def current_user
-# 	if session[:user_id]
-#     User.find.session[:user_id]
-#    end
-# end
+def current_user
+	if session[:user_id]
+    User.find.session[:user_id]
+   end
+end
 
 get '/' do 
 	@user = User.all
-    erb :index
+	erb :index
 end
 
 get '/signup' do
@@ -28,7 +28,7 @@ get '/signup' do
 end
 
 get '/login' do
-	flash[:notice] = "Try again."
+	# flash[:notice] = "Try again."
 	erb :login
 end
 
@@ -48,7 +48,7 @@ post "/user_create" do
 			:username => params[:username],
 			:email => params[:email],
 			:password => params[:password]
-		})
+			})
 		redirect to("/user_create_success")
 	end
 end
@@ -60,7 +60,7 @@ post "/user_login_attempt" do
 
 	matching_users = User.all.where({
 		:username => params[:username]
-	})
+		})
 
 	if matching_users.first
 		# first way we can pass information to a redirect, by using a query string
@@ -87,7 +87,7 @@ post "/submit_throw" do
 	else
 		Throw.create({
 			:throwpost => params[:user_throw], user_id: session[:user_id]
-		})
+			})
 		redirect to("/user_throw_success")
 	end
 end
@@ -113,8 +113,13 @@ get "/user_create_success" do
 end
 
 get "/profile" do
-	@user = User.find(session[:user_id])
-	erb :profile
+	if current_user
+		@user = User.find(session[:user_id])
+		erb :profile
+	else
+		flash[:notice] = "Sorry you should login first."
+		redirect to("/login")
+	end
 end
 
 get "/login_error" do
@@ -129,7 +134,7 @@ get "/seeusers" do
 end
 
 delete '/users/:id' do
-        session.clear
-        current_user.delete
-       erb :edit_profile
+	session.clear
+	current_user.delete
+	erb :edit_profile
 end

@@ -1,28 +1,28 @@
 <div class="users_page">
-<h1>List of Other Users</h1>
-<table>
-	<thead>
-		<tr>
-			<th>
-				User
-			</th>
-			<th>
-				User ID
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @user.each do |u| %>
-		<tr>
-			<td>
-				<%= u.username %>
-			</td>
+	<h1>List of Other Users</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>
+					User
+				</th>
+				<th>
+					User ID
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @user.each do |u| %>
+			<tr>
+				<td>
+					<%= u.username %>
+				</td>
 
-			<td>
-				<%= u.id %>
-			</td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+				<td>
+					<%= u.id %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>
